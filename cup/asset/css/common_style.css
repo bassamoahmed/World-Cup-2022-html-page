@@ -1,0 +1,147 @@
+/* ---------------------------
+        Common Class
+---------------------------- */
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+.no-drop-cursor{
+    cursor: no-drop;
+}
+.button-1{
+    color: #ffffff;
+    background: #ff3e78;
+    padding: 10px;
+    display: inline-block;
+    transition: all .3s ease-in-out;
+}
+.button-1:hover{
+    color: #ff2e6d;
+    background: transparent;
+    outline: 2px solid #ff2e6d;
+}
+.transparent-button{
+    display: inline-block;
+    border: 1px solid #1a1a1a;
+    border-radius: 5px;
+    padding: 1% var(--Size10);
+    color: #1a1a1a;
+    transition: all .3s ease-in-out;
+}
+.transparent-button:hover{
+    border: 2px solid;
+    border-image: linear-gradient(to top left,#ff0000,#0000ff);
+    border-image-slice: 1;
+    background: linear-gradient(to right bottom,#ff000060,#0000ff60);
+    color: var(--black01);
+}
+#active-button{
+    color: #ffffff;
+	border: 2px solid #5e4f4f;
+    background: #ff0000;
+    transition: background .3s ease-in-out;
+}
+#active-button:hover{
+    background: #000000;
+}
+.fontWeight-semibold{
+	
+    font-weight: 600;
+}
+.fontWeight-medium{
+    font-weight: 500;
+}
+.fontWeight-bold{
+    font-weight: 700;
+}
+.border-r-5{
+    border-radius: 5px;
+}
+.border-r-10{
+    border-radius: 8px;
+}
+.border-r-30{
+    border-radius: 30px;
+}
+/* .margin10{
+    margin: var(--Size10);
+}
+.margin20{
+    margin: var(--Size20);
+}
+.marginX10{
+    margin: auto var(--Size10);
+}
+.marginY10{
+    margin: var(--Size10) auto;
+}
+.marginX20{
+    margin: auto var(--Size20);
+}
+.marginY20{
+    margin: var(--Size20) auto;
+}
+.marginX30{
+    margin: auto var(--Size30);
+}
+.marginY30{
+    margin: var(--Size30) auto;
+}
+.marginX40{
+    margin: auto var(--Size40);
+}
+.marginY40{
+    margin: var(--Size40) auto;
+}
+.marginX60{
+    margin: auto var(--Size60);
+}
+.marginY60{
+    margin: var(--Size60) auto;
+}
+.padding10{
+    padding: var(--Size10);
+}
+.padding20{
+    padding: var(--Size20);
+}
+.paddingX10{
+    padding: 0 var(--Size10);
+}
+.paddingY10{
+    padding: var(--Size10) 0;
+}
+.paddingX20{
+    padding: 0 var(--Size20);
+}
+.paddingY20{
+    padding: var(--Size20) 0;
+}
+.paddingX30{
+    padding: 0 var(--Size30);
+}
+.paddingY30{
+    padding: var(--Size30) 0;
+}
+.paddingX40{
+    padding: 0 var(--Size40);
+}
+.paddingY40{
+    padding: var(--Size40) 0;
+}
+.fontSize18{
+    font-size: var(--Size18);
+}
+.fontSize20{
+    font-size: var(--Size20);
+}
+.fontSize25{
+    font-size: var(--Size25);
+}
+.fontSize40{
+    font-size: var(--Size40);
+}
+.fontSize70{
+    font-size: var(--Size70);
+} */

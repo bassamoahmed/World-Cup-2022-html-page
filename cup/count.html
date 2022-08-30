@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown - 2022 World Cup</title>
+<style>
+   /* latin-ext */
+@font-face {
+  font-family: 'Antonio';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(1.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Antonio';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+	<style>
+:root {
+    --background: #2E2D2D;
+    --gray-800: #424242;
+    --green-500: #62ABA1;
+}
+
+* {
+  border: 0;
+  box-sizing: content-box;
+  font-family: 'Antonio', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+#count-down {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+#count-down li {
+    background-color: var(--gray-800);
+    border-radius: 15px;
+    color: var(--green-500);
+    font-size: 32px;
+    font-weight: bold;
+    height: 45px;
+    padding: 8px 12px;
+    position: relative;
+    text-align: center;
+    width: 35px;
+}
+
+#count-down li:before,
+#count-down li:after {
+    position: absolute;
+}
+
+#count-down li:not(:last-child):before {
+    content: ":";
+    font-size: 24px;
+    right: -15px;
+    top: 15px;
+}
+
+#count-down li:after {
+    bottom: -16px;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+    justify-content: center;
+    width: calc(100% - 22px);
+}
+
+#count-down li.days:after {
+    content: "يوم";
+}
+
+#count-down li.hours:after {
+    content: "ساعة";
+}
+
+#count-down li.minutes:after {
+    content: "دقيقة";
+}
+
+#count-down li.seconds:after {
+    content: "ثانية";
+}
+
+</style>
+	<script language="javascript" type="text/javascript">
+	const second = 1000
+const minute = second * 60
+const hour = minute * 60
+const day = hour * 24
+
+const kickOffWorldCupDate = new Date('2022-11-21 07:00:00')
+
+function zeroLeft (number) {
+    return String(number).padStart(2, '0')
+}
+
+function diffKickOffDateWorldCup () {
+    const currentDate = new Date().getTime()
+    return kickOffWorldCupDate.getTime() - currentDate
+}
+
+function setCountDown (element, value) {
+    document.querySelector(`.${element}`).innerHTML = value
+}
+
+function diffDay (diff) {
+    return Math.floor(diff / day)
+}
+
+function diffHour (diff) {
+    const round = Math.floor(diff % day / hour)
+    return zeroLeft(round)
+}
+
+function diffMinute (diff) {
+    const round = Math.floor(diff % hour / minute)
+    return zeroLeft(round)
+}
+
+function diffSecond (diff) {
+    const round = Math.floor(diff % minute / second)
+    return zeroLeft(round)
+}
+
+function countDown () {
+    const diff = diffKickOffDateWorldCup()
+
+    setCountDown('days', diffDay(diff))
+    setCountDown('hours', diffHour(diff))
+    setCountDown('minutes', diffMinute(diff))
+    setCountDown('seconds', diffSecond(diff))
+}
+
+window.load = setInterval(countDown, 1000)
+	</script>
+</head>
+<body>
+    <ul id="count-down">
+        <li class="days"></li>
+        <li class="hours"></li>
+        <li class="minutes"></li>
+        <li class="seconds"></li>
+    </ul>
+    
+</body>
+</html>
